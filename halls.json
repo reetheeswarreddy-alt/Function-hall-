@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Royal Grand Hall",
+    "location": "Main Road, City Center",
+    "capacity": 800,
+    "pricePerDay": 35000
+  },
+  {
+    "id": 2,
+    "name": "Green Garden Function Hall",
+    "location": "Garden Road, Downtown",
+    "capacity": 500,
+    "pricePerDay": 25000
+  },
+  {
+    "id": 3,
+    "name": "Crystal Banquet Hall",
+    "location": "Lake View Road",
+    "capacity": 300,
+    "pricePerDay": 18000
+  }
+]
