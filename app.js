@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function loadHalls() {
         try {
-            const response = await fetch("api/halls", {
+            const response = await fetch("api/halls.json", {
                 headers: { Accept: "application/json" }
             });
 
