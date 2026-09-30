@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HallBook online function hall booking">
+    <title>HallBook | Function Hall Booking</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="hero">
+    <nav>
+        <div class="logo">HallBook</div>
+        <a href="#booking">Book Now</a>
+    </nav>
+
+    <div class="hero-content">
+        <p class="tag">ONLINE FUNCTION HALL BOOKING</p>
+        <h1>Plan your special day with ease.</h1>
+        <p>Choose a hall, decoration, food package and complete your booking online.</p>
+        <a class="btn hero-btn" href="#booking">Start Booking</a>
+    </div>
+</header>
+
+<main>
+    <section class="section">
+        <div class="section-title">
+            <p class="tag">OUR HALLS</p>
+            <h2>Choose your function hall</h2>
+            <p class="section-subtitle">Prices are shown per event day.</p>
+        </div>
+        <div id="hallCards" class="hall-grid">
+            <div class="loading-card">Loading halls...</div>
+        </div>
+    </section>
+
+    <section id="booking" class="section booking-section">
+        <div class="section-title">
+            <p class="tag">BOOKING FORM</p>
+            <h2>Reserve your hall</h2>
+        </div>
+
+        <form id="bookingForm" class="booking-form" novalidate>
+            <div class="form-grid">
+                <div>
+                    <label for="customerName">Full Name</label>
+                    <input id="customerName" name="customerName" autocomplete="name" required>
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" autocomplete="email" required>
+                </div>
+                <div>
+                    <label for="phone">Phone</label>
+                    <input id="phone" name="phone" type="tel" autocomplete="tel" required>
+                </div>
+                <div>
+                    <label for="eventDate">Event Date</label>
+                    <input id="eventDate" name="eventDate" type="date" required>
+                </div>
+                <div>
+                    <label for="hallId">Function Hall</label>
+                    <select id="hallId" name="hallId" required>
+                        <option value="">Select a hall</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="guests">Number of Guests</label>
+                    <input id="guests" name="guests" type="number" min="1" max="5000" required>
+                </div>
+            </div>
+
+            <div class="choice-block">
+                <h3>Decoration</h3>
+                <div class="choice-row">
+                    <label class="radio-card">
+                        <input type="radio" name="decoration" value="With Decoration" checked>
+                        <span>With Decoration <small>+ ₹5,000</small></span>
+                    </label>
+                    <label class="radio-card">
+                        <input type="radio" name="decoration" value="Without Decoration">
+                        <span>Without Decoration</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="choice-block">
+                <h3>Food Service</h3>
+                <div class="choice-row">
+                    <label class="radio-card">
+                        <input type="radio" name="foodRequired" value="true" checked>
+                        <span>With Food <small>₹450 / guest</small></span>
+                    </label>
+                    <label class="radio-card">
+                        <input type="radio" name="foodRequired" value="false">
+                        <span>Without Food</span>
+                    </label>
+                </div>
+            </div>
+
+            <div id="foodSection" class="choice-block">
+                <h3>Select Food Items</h3>
+                <p class="help">Select one or more items for your food package.</p>
+                <div class="food-grid">
+                    <label><input type="checkbox" name="foodItems" value="Welcome Drink"> Welcome Drink</label>
+                    <label><input type="checkbox" name="foodItems" value="Soup"> Soup</label>
+                    <label><input type="checkbox" name="foodItems" value="Salad"> Salad</label>
+                    <label><input type="checkbox" name="foodItems" value="Starters"> Starters</label>
+                    <label><input type="checkbox" name="foodItems" value="Veg Biryani"> Veg Biryani</label>
+                    <label><input type="checkbox" name="foodItems" value="Chicken Biryani"> Chicken Biryani</label>
+                    <label><input type="checkbox" name="foodItems" value="Mutton Biryani"> Mutton Biryani</label>
+                    <label><input type="checkbox" name="foodItems" value="Fried Rice"> Fried Rice</label>
+                    <label><input type="checkbox" name="foodItems" value="Paneer Curry"> Paneer Curry</label>
+                    <label><input type="checkbox" name="foodItems" value="Chicken Curry"> Chicken Curry</label>
+                    <label><input type="checkbox" name="foodItems" value="Dal"> Dal</label>
+                    <label><input type="checkbox" name="foodItems" value="Roti/Naan"> Roti / Naan</label>
+                    <label><input type="checkbox" name="foodItems" value="Rice"> Rice</label>
+                    <label><input type="checkbox" name="foodItems" value="Curd"> Curd</label>
+                    <label><input type="checkbox" name="foodItems" value="Pickles"> Pickles</label>
+                    <label><input type="checkbox" name="foodItems" value="Ice Cream"> Ice Cream</label>
+                    <label><input type="checkbox" name="foodItems" value="Gulab Jamun"> Gulab Jamun</label>
+                    <label><input type="checkbox" name="foodItems" value="Fruit Salad"> Fruit Salad</label>
+                    <label><input type="checkbox" name="foodItems" value="Tea/Coffee"> Tea / Coffee</label>
+                </div>
+            </div>
+
+            <div>
+                <label for="specialRequest">Special Request</label>
+                <textarea id="specialRequest" name="specialRequest" rows="4"
+                          placeholder="Any additional requirements..."></textarea>
+            </div>
+
+            <button id="bookingButton" class="btn submit-btn" type="submit">
+                Confirm Booking
+            </button>
+            <p id="message" class="message" role="alert" aria-live="polite"></p>
+        </form>
+    </section>
+
+    <section id="payment" class="section payment-section hidden">
+        <div class="section-title">
+            <p class="tag">PAYMENT</p>
+            <h2>Complete your booking</h2>
+        </div>
+
+        <div class="payment-card">
+            <div class="booking-summary">
+                <h3>Booking Summary</h3>
+                <div class="summary-grid">
+                    <p>Booking ID <strong id="paymentBookingId">-</strong></p>
+                    <p>Hall <strong id="paymentHall">-</strong></p>
+                    <p>Guests <strong id="paymentGuests">-</strong></p>
+                    <p>Decoration <strong id="paymentDecoration">-</strong></p>
+                    <p>Food <strong id="paymentFood">-</strong></p>
+                </div>
+                <p class="total">Total: ₹<span id="paymentAmount">0.00</span></p>
+            </div>
+
+            <form id="paymentForm">
+                <h3>Select Payment Method</h3>
+                <label class="payment-option">
+                    <input type="radio" name="paymentMethod" value="UPI" checked>
+                    <span>UPI</span>
+                </label>
+                <label class="payment-option">
+                    <input type="radio" name="paymentMethod" value="CARD">
+                    <span>Debit / Credit Card</span>
+                </label>
+                <label class="payment-option">
+                    <input type="radio" name="paymentMethod" value="CASH">
+                    <span>Pay at Hall</span>
+                </label>
+                <p class="help">Demo payment only. No real money is processed.</p>
+                <button id="paymentButton" class="btn submit-btn" type="submit">
+                    Pay &amp; Confirm
+                </button>
+                <p id="paymentMessage" class="message" role="alert" aria-live="polite"></p>
+            </form>
+        </div>
+    </section>
+
+    <section id="confirmation" class="section confirmation-section hidden">
+        <div class="confirmation-card">
+            <div class="check-icon">✓</div>
+            <h2>Booking Confirmed!</h2>
+            <p id="confirmationText"></p>
+            <a class="btn submit-btn" href="#booking" id="newBooking">Make Another Booking</a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>HallBook &copy; 2026 | Java + JDBC Learning Project</p>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>

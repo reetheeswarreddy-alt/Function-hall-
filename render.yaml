@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: function-hall-booking
+    runtime: docker
+    plan: free
+    envVars:
+      - key: DB_URL
+        sync: false
+      - key: DB_USER
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
