@@ -47,7 +47,7 @@ CREATE TABLE payments (
     INDEX idx_payment_booking (booking_id)
 );
 
-INSERT INTO halls.json (name, location, capacity, price_per_day) VALUES
+INSERT INTO halls (name, location, capacity, price_per_day) VALUES
 ('Royal Grand Hall', 'Main Road, City Center', 800, 35000.00),
 ('Green Garden Function Hall', 'Garden Road, Downtown', 500, 25000.00),
 ('Crystal Banquet Hall', 'Lake View Road', 300, 18000.00);
